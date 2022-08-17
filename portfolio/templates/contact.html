@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <title>Shahzad Ahmad</title>
+    <!-------------- Font Awesome Link -------------->
+    <script src="https://kit.fontawesome.com/de270889e1.js" crossorigin="anonymous"></script>
+    <!-------------- Owl Carousel Links -------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-------------- AOS Link -------------->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* <================= Google Font Link (Nunito) =================> */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap');
+
+        /* <================= CSS Reset =================> */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: black;
+            min-height: 100vh;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            color: white;
+            background-color: crimson;
+        }
+
+        /* <================= Scroll Bar =================> */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: black;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #bfbfbf;
+            border-radius: 10px;
+        }
+
+        /* <================= CSS Variables =================> */
+        :root {
+            --font-large-color: white;
+            --font-small-color: #9f9f9f;
+            --main-color: #FF2626;
+            --bg-color-1: #131416;
+            --bg-color-2: #191a20;
+        }
+
+        h1 {
+            font-size: 90px;
+            color: var(--font-large-color);
+        }
+
+        h2 {
+            font-size: 46px;
+            color: var(--font-large-color);
+        }
+
+        h3 {
+            font-size: 34px;
+        }
+
+        h4 {
+            font-size: 30px;
+        }
+
+        h5 {
+            font-size: 20px;
+        }
+
+        p,
+        span {
+            font-size: 17px;
+            color: var(--font-small-color);
+        }
+
+        /* <================= Reusable Classes =================> */
+        .container {
+            padding: 30px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: transparent;
+            font-size: 17px;
+            outline: none;
+            border: 1px solid white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .btn a {
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--main-color);
+            border-color: var(--main-color);
+        }
+
+        .heading-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .animate-bar {
+            width: 5rem;
+            height: 4px;
+            background-color: var(--main-color);
+            margin-top: 15px;
+            position: relative;
+        }
+
+        .animate-bar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            border-left: 5px solid white;
+            border-right: 5px solid white;
+            animation: animate 3s linear infinite;
+        }
+
+        @keyframes animate {
+            from {
+                left: 0%;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        .sub-heading {
+            max-width: 40rem;
+            text-align: center;
+            margin-top: 30px;
+            padding: 0 1rem;
+        }
+
+        /* <================= Contact =================> */
+        #contact {
+            background-color: var(--bg-color-1);
+        }
+
+        #contact .animate-bar::before {
+            border-color: var(--bg-color-1);
+        }
+
+        #contact .container {
+            align-items: flex-start;
+            gap: 2.5rem;
+        }
+
+        #contact form {
+            width: 50%;
+        }
+
+        form .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .form-row .input-data {
+            width: 50%;
+            display: block;
+        }
+
+        .input-data input,
+        textarea {
+            background-color: #1c1d24;
+            width: 100%;
+            display: block;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid transparent;
+            font-size: 17px;
+            margin-top: 20px;
+            transition: border-bottom-color 0.3s ease;
+        }
+
+        .input-data textarea {
+            padding: 10px 10px 120px;
+        }
+
+        .input-data input:focus,
+        textarea:focus {
+            border-bottom-color: var(--main-color);
+        }
+
+        #contact .contact-info {
+            width: 40%;
+        }
+
+        #contact .contact-list {
+            list-style: none;
+            padding-top: 20px;
+        }
+
+        .contact-list .list-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-list .list-item .icon i {
+            font-size: 30px;
+            padding-right: 20px;
+            color: var(--main-color);
+        }
+
+        .contact-list .list-item .details {
+            padding: 15px;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            flex-direction: column;
+            border-left: 1px solid #878e99;
+            line-height: 22px;
+        }
+
+        .contact-list .list-item .details label {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .contact-list .list-item .details p {
+            font-size: 15px;
+        }
+
+        /* <================= Responsive =================> */
+
+        .hamburger-lines {
+            position: absolute;
+            width: 32px;
+            height: 26px;
+            right: 2.5rem;
+            pointer-events: none;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 2;
+            display: none;
+        }
+
+        .hamburger-lines .line {
+            display: block;
+            height: 4px;
+            width: 100%;
+            border: 10px;
+            background-color: #f8f8f8;
+        }
+
+        .hamburger-lines .line1 {
+            transform-origin: 0% 0%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .hamburger-lines .line2 {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .hamburger-lines .line3 {
+            transform-origin: 0% 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        /* Media Queries */
+        @media (max-width: 950px) {
+            #navbar .nav-items {
+                position: fixed;
+                flex-direction: column;
+                gap: 20px;
+                top: 0;
+                left: -100%;
+                background-color: #131416;
+                width: 300px;
+                height: 100%;
+                padding-top: 8rem;
+                padding-left: 2rem;
+                transition: all 0.5s ease-in-out;
+            }
+
+            #navbar .checkbox {
+                display: block;
+            }
+
+            .hamburger-lines {
+                display: flex;
+            }
+
+            #navbar .logo {
+                margin-left: 1.5rem;
+            }
+
+            #about .container .about-img {
+                width: 20rem;
+            }
+        }
+
+        @media (max-width: 850px) {
+            #navbar .checkbox {
+                right: 2.5rem;
+            }
+
+            #home .text-holder {
+                text-align: center;
+            }
+
+            #home .text-holder h1,
+            #home .text-holder h1 span {
+                font-size: 45px;
+            }
+
+            #home .text-holder h3,
+            #home .text-holder h3 span {
+                font-size: 20px;
+            }
+
+            #home .scroll-txt {
+                display: none;
+            }
+
+            #home .social-icons {
+                width: 100%;
+                text-align: center;
+                right: 0;
+            }
+
+            #about .container .text-wrapper {
+                padding-left: 120px;
+            }
+
+            .service-card .card-content {
+                width: 100%;
+                margin: 15px 0;
+            }
+
+            #blogs .blog {
+                width: 100%;
+            }
+
+            .container {
+                padding: 0 80px;
+            }
+
+            #portfolio .gallery-item {
+                width: 50%;
+            }
+
+            #contact .contact-info,
+            #contact form {
+                width: 40rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            #portfolio .gallery-item {
+                padding: 15px 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            #home .hero-img {
+                display: none;
+            }
+
+            #about .container {
+                padding: 100px 20px;
+                justify-content: flex-start;
+            }
+
+            #about .container .text-wrapper {
+                padding: 0;
+            }
+
+            #resume .container .resume-item {
+                width: 100%;
+            }
+
+            #skills .container {
+                padding: 0 1.5rem;
+            }
+
+            #skills .container .progress-item {
+                width: 100%;
+            }
+
+            #skills .container .progress-item .progress-bar {
+                width: 100%;
+            }
+
+            #reviews {
+                padding: 0 20px;
+                height: auto;
+            }
+
+            .owl-carousel .item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .owl-carousel .item .img-box {
+                width: 8rem;
+                margin-bottom: 20px;
+            }
+
+            .owl-carousel .item .text-holder {
+                padding: 0;
+            }
+
+            .owl-carousel .owl-dot {
+                padding: 0 !important;
+            }
+        }
+
+        @media (max-width: 467px) {
+            #portfolio .gallery-item {
+                width: 100%;
+            }
+
+            #portfolio .gallery-filter .filter-item {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-------------- Navbar -------------->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <h5 class="navbar-brand">Shahzad Ahmad</h5>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Portfolio</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/service">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/resume">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/contact">Get in Touch</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-------------- Contact Section -------------->
+    <section id="contact">
+        <div class="heading-wrapper">
+            <div class="heading">
+                <h2>Get in touch</h2>
+            </div>
+            <div class="animate-bar"></div>
+        </div>
+
+        <div class="container">
+            <form action="/" method="post" data-aos="fade-right" data-aos-duration="1200">
+                {% csrf_token %}
+                <div class="title">
+                    <h4>Massage Me</h4>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-data">
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Name" required>
+                    </div>
+                    <div class="input-data">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="input-data">
+                    <textarea class="form-control" name="content" id="content" placeholder="Massage"
+                        required></textarea>
+                </div>
+                <div class="form-row">
+                    <input type="submit" value="Send Your Massage" class="btn" style="color: #fff;">
+                </div>
+            </form>
+
+            <div class="contact-info" data-aos="fade-right" data-aos-duration="1200">
+                <div class="title">
+                    <h4>Contact-info</h4>
+                </div>
+                <div class="subtitle">
+                    <p>Always available for freelance work if the right project comes along, Feel free
+                        to contact me!</p>
+                </div>
+
+                <ul class="contact-list">
+
+                    <!-- List Item Start -->
+                    <li class="list-item">
+                        <div class="icon">
+                            <i class="fa-brands fa-hive"></i>
+                        </div>
+                        <div class="details">
+                            <label for="#">Name</label>
+                            <p>Shahzad Ahmad</p>
+                        </div>
+                    </li>
+                    <!-- List Item End -->
+
+                    <!-- List Item Start -->
+                    <li class="list-item">
+                        <div class="icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="details">
+                            <label for="#">Location</label>
+                            <p>Islamabad, Pakistan</p>
+                        </div>
+                    </li>
+                    <!-- List Item End -->
+
+                    <!-- List Item Start -->
+                    <li class="list-item">
+                        <div class="icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="details">
+                            <label for="#">Call Me</label>
+                            <p>+92 313 0581089</p>
+                        </div>
+                    </li>
+                    <!-- List Item End -->
+
+                    <!-- List Item Start -->
+                    <li class="list-item">
+                        <div class="icon">
+                            <i class="fa-solid fa-at"></i>
+                        </div>
+                        <div class="details">
+                            <label for="#">Email</label>
+                            <p>simyen0@gmail.com</p>
+                        </div>
+                    </li>
+                    <!-- List Item End -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-------------- Jquery Scripts -------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-------------- Owl Carousel Scripts -------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-------------- AOS Scripts -------------->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
