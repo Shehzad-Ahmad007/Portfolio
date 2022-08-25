@@ -20,6 +20,11 @@ class About(models.Model):
     platform = models.CharField(max_length=255)
 
 
+class Service(models.Model):
+    service = models.CharField(max_length=50)
+    description = models.CharField(max_length=2083)
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=50)
