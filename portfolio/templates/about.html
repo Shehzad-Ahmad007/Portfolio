@@ -481,6 +481,7 @@
         </div>
     </nav>
     <!-------------- About Section -------------->
+    {% for about in abouts %}
     <section id="about">
         <div class="container">
             <div class="about-img" data-aos="fade-right" data-aos-duration="1200">
@@ -488,60 +489,57 @@
                     alt="">
             </div>
             <div class="text-wrapper" data-aos="fade-right" data-aos-duration="1200">
-                <h4>Shahzad Ahmad</h4>
-                <h5>A <span>Web Developer</span> based in <span>Islamabad</span></h5>
-                <p>I design and develop services for customers of all sizes, specializing in creating stylish,
-                    modern
-                    websites, web services and online stores. My passion is to design digital user experiences
-                    through
-                    the bold interface and meaningful interactions and develop web applications.</p>
+                <h4>{{ about.name }}</h4>
+                <h5>A <span> {{ about.profession }} </span> based in <span>Islamabad</span></h5>
+                <p> {{ about.about }} </p>
                 <div class="about-list">
 
                     <!-- List Item Start -->
                     <div class="list-item">
                         <label>Birthday</label>
-                        <p>30th November 2001</p>
+                        <p> {{ about.birthday }} </p>
                     </div>
                     <!-- List Item End -->
 
                     <!-- List Item Start -->
                     <div class="list-item">
                         <label>E-mail</label>
-                        <p>simyen0@gmail.com</p>
+                        <p> {{ about.email }} </p>
                     </div>
                     <!-- List Item End -->
 
                     <!-- List Item Start -->
                     <div class="list-item">
                         <label>Age</label>
-                        <p>21 Yr</p>
+                        <p> {{ about.age }} </p>
                     </div>
                     <!-- List Item End -->
 
                     <!-- List Item Start -->
                     <div class="list-item">
                         <label>Phone</label>
-                        <p>+92 313 0581089</p>
+                        <p> {{ about.phone }} </p>
                     </div>
                     <!-- List Item End -->
 
                     <!-- List Item Start -->
                     <div class="list-item">
                         <label>Address</label>
-                        <p>Islamabad, Pakistan</p>
+                        <p> {{ about.address }} </p>
                     </div>
                     <!-- List Item End -->
 
                     <!-- List Item Start -->
                     <div class="list-item">
                         <label>Freelance</label>
-                        <p>Available</p>
+                        <p>{{ about.platform }}</p>
                     </div>
                     <!-- List Item End -->
                 </div>
             </div>
         </div>
     </section>
+    {% endfor %}
 
     <!-------------- Jquery Scripts -------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"

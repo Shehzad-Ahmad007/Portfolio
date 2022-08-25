@@ -1,13 +1,15 @@
 from django.shortcuts import render
-from .models import Contact
+from .models import About, Contact, Home
 
 
 def index(request):
-    return render(request, 'index.html')
+    homes = Home.objects.all()
+    return render(request, 'index.html', {'homes': homes})
 
 
 def about(request):
-    return render(request, 'about.html')
+    abouts = About.objects.all()
+    return render(request, 'about.html', {'abouts': abouts})
 
 
 def service(request):
