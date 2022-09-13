@@ -27,15 +27,15 @@ class Service(models.Model):
 
 class Resume(models.Model):
     title = models.CharField(max_length=255)
-    higher_edu_title = models.CharField(max_length=255)
-    higher_edu_description = models.TextField()
-    university_year = models.CharField(max_length=2083)
-    inter_edu_title = models.CharField(max_length=255)
-    inter_edu_description = models.TextField()
-    college_year = models.CharField(max_length=2083)
-    metric_edu_title = models.CharField(max_length=255)
-    metric_edu_description = models.TextField()
-    school_year = models.CharField(max_length=2083)
+    higher_edu_title = models.CharField(max_length=255, blank=True)
+    higher_edu_description = models.TextField(blank=True)
+    university_year = models.CharField(max_length=2083, blank=True)
+    inter_edu_title = models.CharField(max_length=255, blank=True)
+    inter_edu_description = models.TextField(blank=True)
+    college_year = models.CharField(max_length=2083, blank=True)
+    metric_edu_title = models.CharField(max_length=255, blank=True)
+    metric_edu_description = models.TextField(blank=True)
+    school_year = models.CharField(max_length=2083, blank=True)
 
 
 class Contact(models.Model):
