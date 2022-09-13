@@ -485,6 +485,7 @@
 
 <body>
     <!-------------- Resume Section -------------->
+    {% for resume in resumes %}
     <section id="resume">
         <div class="heading-wrapper">
             <div class="heading">
@@ -503,27 +504,27 @@
                 <!-- Resume Item Start -->
                 <div class="resume-item">
                     <div class="item-arrow"></div>
-                    <h5>BS in Information Technology</h5>
-                    <span>Air University Islamabad / 2020 - Present</span>
-                    <p>I am studing Information Technology but my profession is Web Developement.</p>
+                    <h5>{{ resume.higher_edu_title }}</h5>
+                    <span>{{ resume.university_year }}</span>
+                    <p>{{ resume.higher_edu_description }}</p>
                 </div>
                 <!-- Resume Item End -->
 
                 <!-- Resume Item Start -->
                 <div class="resume-item">
                     <div class="item-arrow"></div>
-                    <h5>Fsc. Pre Engineering</h5>
-                    <span>Punjab Group of Colleges, Pakistan/ 2018 - 2020</span>
-                    <p>I passed intermediate with A grade and and got 76.82% marks</p>
+                    <h5>{{ resume.inter_edu_title }}</h5>
+                    <span>{{ resume.college_year }}</span>
+                    <p>{{ resume.inter_edu_description }}</p>
                 </div>
                 <!-- Resume Item End -->
 
                 <!-- Resume Item Start -->
                 <div class="resume-item">
                     <div class="item-arrow"></div>
-                    <h5>Matriculation</h5>
-                    <span>Govt. High School, Pakistan / 2016 - 2018</span>
-                    <p>I have done matriculation with A+ grade and got 83.64% marks.</p>
+                    <h5>{{ resume.metric_edu_title }}</h5>
+                    <span>{{ resume.school_year }}</span>
+                    <p>{{ resume.metric_edu_description }}</p>
                 </div>
                 <!-- Resume Item End -->
             </div>
@@ -586,6 +587,7 @@
             </div>
         </section>
     </section>
+    {% endfor %}
 
     <!-------------- Jquery Scripts -------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"

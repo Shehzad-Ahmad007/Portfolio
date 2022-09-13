@@ -11,7 +11,7 @@ class Home(models.Model):
 class About(models.Model):
     name = models.CharField(max_length=30)
     profession = models.CharField(max_length=255)
-    about = models.CharField(max_length=2083)
+    about = models.TextField()
     birthday = models.CharField(max_length=255)
     age= models.IntegerField()
     address = models.CharField(max_length=255)
@@ -23,6 +23,19 @@ class About(models.Model):
 class Service(models.Model):
     service = models.CharField(max_length=50)
     description = models.CharField(max_length=2083)
+
+
+class Resume(models.Model):
+    title = models.CharField(max_length=255)
+    higher_edu_title = models.CharField(max_length=255)
+    higher_edu_description = models.TextField()
+    university_year = models.CharField(max_length=2083)
+    inter_edu_title = models.CharField(max_length=255)
+    inter_edu_description = models.TextField()
+    college_year = models.CharField(max_length=2083)
+    metric_edu_title = models.CharField(max_length=255)
+    metric_edu_description = models.TextField()
+    school_year = models.CharField(max_length=2083)
 
 
 class Contact(models.Model):
