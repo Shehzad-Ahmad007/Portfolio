@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import About, Contact, Home, Resume, Service
+from .models import About, Contact, Home, Portfolio, Resume, Service
 
 
 def index(request):
@@ -23,7 +23,8 @@ def resume(request):
 
 
 def portfolio(request):
-    return render(request, 'portfolio.html')
+    portfolios = Portfolio.objects.all()
+    return render(request, 'portfolio.html', {'portfolios': portfolios})
 
 
 def contact(request):

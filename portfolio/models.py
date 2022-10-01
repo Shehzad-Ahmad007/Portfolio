@@ -39,8 +39,13 @@ class Resume(models.Model):
 
 
 class Portfolio(models.Model):
-    image_url = models.URLField(blank=True)
-    name = 'web application'
+    image_url = models.CharField(max_length=2083, blank=True)
+    url = models.CharField(max_length=2083, blank=True)
+    name = models.CharField(max_length=253)
+
+
+    def __str__(self):
+        return self.name
 
 
 class Contact(models.Model):
