@@ -38,6 +38,11 @@ class Resume(models.Model):
     school_year = models.CharField(max_length=2083, blank=True)
 
 
+class Portfolio(models.Model):
+    image_url = models.URLField(blank=True)
+    name = 'web application'
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=50)
