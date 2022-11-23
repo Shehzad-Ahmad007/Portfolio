@@ -2,10 +2,14 @@ from django.db import models
 
 
 class Home(models.Model):
-    facebook_url = models.CharField(max_length=2083)
-    instagram_url = models.CharField(max_length=2083)
-    whatsapp_url = models.CharField(max_length=2083)
+    facebook_url = models.CharField(max_length=2083, null=True, blank=True, default='')
+    instagram_url = models.CharField(max_length=2083, null=True, blank=True, default='')
+    whatsapp_url = models.CharField(max_length=2083, null=True, blank=True, default='')
+    twitter_url = models.CharField(max_length=2083, null=True, blank=True, default='')
     name = 'urls'
+
+    def __str__(self):
+        return self.name
 
 
 class About(models.Model):
@@ -45,7 +49,7 @@ class Portfolio(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Contact(models.Model):
